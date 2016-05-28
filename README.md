@@ -117,8 +117,8 @@ This Dockerfile allows you to build images to deploy your own [TeamCity](http://
   }
 
   map $http_upgrade $connection_upgrade {
-      default upgrade;
-      ''      '';
+    default upgrade;
+    ''      '';
   }
 
   server {
@@ -132,6 +132,9 @@ This Dockerfile allows you to build images to deploy your own [TeamCity](http://
 
     # Do not limit upload.
     client_max_body_size 0;
+
+    proxy_read_timeout     1200;
+    proxy_connect_timeout  240;
 
     # Required to avoid HTTP 411: see issue #1486 (https://gitteamcity.com/dotcloud/docker/issues/1486)
     chunked_transfer_encoding on;
