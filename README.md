@@ -94,7 +94,7 @@ This Dockerfile allows you to build images to deploy your own [TeamCity](http://
 6. Setup logrotate, e.g. `/etc/logrotate.d/teamcity`.
 
   ```sh
-  cat <<EOF > "/etc/logrotate.d/teamcity-server"
+  cat <<EOF > "/etc/logrotate.d/teamcity"
   $TEAMCITY_LOGS/*.log
   {
     rotate 7
