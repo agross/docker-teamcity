@@ -15,7 +15,7 @@ RUN echo Installing packages && \
                      wget \
                      ca-certificates
 
-RUN TEAMCITY_VERSION=9.1.6 && \
+RUN TEAMCITY_VERSION=9.1.7 && \
     \
     DOWNLOAD_URL=https://download.jetbrains.com/teamcity/TeamCity-$TEAMCITY_VERSION.tar.gz && \
     echo Downloading $DOWNLOAD_URL to $(pwd) && \
