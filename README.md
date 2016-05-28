@@ -64,10 +64,10 @@ This Dockerfile allows you to build images to deploy your own [TeamCity](http://
                     agross/teamcity
   ```
 
-5. Create systemd unit, e.g. `/etc/systemd/system/teamcity-server.service`.
+5. Create systemd unit, e.g. `/etc/systemd/system/teamcity.service`.
 
   ```sh
-  cat <<EOF > "/etc/systemd/system/teamcity-server.service"
+  cat <<EOF > "/etc/systemd/system/teamcity.service"
   [Unit]
   Description=JetBrains TeamCity Server
   Requires=docker.service
@@ -87,8 +87,8 @@ This Dockerfile allows you to build images to deploy your own [TeamCity](http://
   WantedBy=multi-user.target
   EOF
 
-  systemctl enable teamcity-server.service
-  systemctl start teamcity-server.service
+  systemctl enable teamcity.service
+  systemctl start teamcity.service
   ```
 
 6. Setup logrotate, e.g. `/etc/logrotate.d/teamcity`.
@@ -193,7 +193,7 @@ This Dockerfile allows you to build images to deploy your own [TeamCity](http://
   # Repeat step 4 and create a new image.
   docker create ...
 
-  systemctl start teamcity-server.service
+  systemctl start teamcity.service
   ```
 
 10. Trust self-signed SSL certificates.
