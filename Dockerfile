@@ -13,7 +13,8 @@ RUN echo Installing packages && \
     apk add --update coreutils \
                      bash \
                      wget \
-                     ca-certificates
+                     ca-certificates \
+                     openssl
 
 RUN TEAMCITY_VERSION=9.1.7 && \
     \
