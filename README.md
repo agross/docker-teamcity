@@ -55,9 +55,12 @@ This Dockerfile allows you to build images to deploy your own [TeamCity](http://
 
   Use `--env` to specify JVM and TeamCity server options, e.g. for [memory](https://confluence.jetbrains.com/display/TCD9/Installing+and+Configuring+the+TeamCity+Server#InstallingandConfiguringtheTeamCityServer-memory).
 
+  `/etc/localtime` needs to be bind-mounted to use the same time zone as your docker host.
+
   ```sh
   docker create -it --env TEAMCITY_SERVER_MEM_OPTS='-Xms1g -Xmx3g' \
                     -p $PORT:8111 \
+                    -v /etc/localtime:/etc/localtime:ro \
                     -v "$TEAMCITY_DATA:/teamcity/.BuildServer:z" \
                     -v "$TEAMCITY_LOGS:/teamcity/logs:z" \
                     --name teamcity \
