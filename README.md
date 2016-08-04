@@ -1,6 +1,6 @@
 # docker-teamcity
 
-[![](https://imagelayers.io/badge/agross/teamcity:latest.svg)](https://imagelayers.io/?images=agross/teamcity:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/agross/teamcity.svg)](https://microbadger.com/images/agross/teamcity "Get your own image badge on microbadger.com")
 
 This Dockerfile allows you to build images to deploy your own [TeamCity](http://www.jetbrains.com/teamcity/) instance. It has been tested on [Fedora 23](https://getfedora.org/) and [CentOS 7](https://www.centos.org/).
 
