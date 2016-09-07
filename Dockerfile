@@ -38,9 +38,12 @@ RUN sed --in-place --expression 's_</Host>.*$_\
                remoteIpHeader="x-forwarded-for" />\n\
       &_' conf/server.xml
 
+# Check for new versions at: http://tomcat.apache.org/download-native.cgi
 RUN echo Compiling the APR based Apache Tomcat Native library && \
     \
+    TCNATIVE_VERSION=1.2.8 && \
     BUILD_DIR=/tmp/apr-build && \
+    DOWNLOAD_URL=http://www-us.apache.org/dist/tomcat/tomcat-connectors/native/$TCNATIVE_VERSION/source/tomcat-native-$TCNATIVE_VERSION-src.tar.gz && \
     \
     apk add --update apr-util \
                      apr-util-dev \
@@ -48,9 +51,12 @@ RUN echo Compiling the APR based Apache Tomcat Native library && \
                      gcc && \
     \
     mkdir --parents "$BUILD_DIR" && \
-    tar xzvf bin/tomcat-native.tar.gz --directory "$BUILD_DIR" && \
+    cd "$BUILD_DIR" && \
     \
-    cd "$BUILD_DIR/tomcat-native-1.1.33-src/jni/native" && \
+    wget "$DOWNLOAD_URL" --progress bar:force:noscroll --output-document tomcat-native.tar.gz && \
+    tar xzvf tomcat-native.tar.gz && \
+    \
+    cd "tomcat-native-$TCNATIVE_VERSION-src/native" && \
     ./configure --with-apr="$(which apr-1-config)" --libdir=/usr/java/packages/lib/amd64 && \
     make && \
     make install && \
