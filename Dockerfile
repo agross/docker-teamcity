@@ -38,6 +38,28 @@ RUN sed --in-place --expression 's_</Host>.*$_\
                remoteIpHeader="x-forwarded-for" />\n\
       &_' conf/server.xml
 
+RUN echo Compiling the APR based Apache Tomcat Native library && \
+    \
+    BUILD_DIR=/tmp/apr-build && \
+    \
+    apk add --update apr-util \
+                     apr-util-dev \
+                     build-base \
+                     gcc && \
+    \
+    mkdir --parents "$BUILD_DIR" && \
+    tar xzvf bin/tomcat-native.tar.gz --directory "$BUILD_DIR" && \
+    \
+    cd "$BUILD_DIR/tomcat-native-1.1.33-src/jni/native" && \
+    ./configure --with-apr="$(which apr-1-config)" --libdir=/usr/java/packages/lib/amd64 && \
+    make && \
+    make install && \
+    \
+    rm -rf "$BUILD_DIR" && \
+    apk del apr-util-dev \
+            build-base \
+            gcc
+
 COPY ./docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
