@@ -1,4 +1,4 @@
-FROM java:8-alpine
+FROM openjdk:8-alpine
 MAINTAINER Alexander Groß <agross@therightstuff.de>
 
 EXPOSE 8111
