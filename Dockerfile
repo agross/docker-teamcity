@@ -16,7 +16,7 @@ RUN echo Installing packages && \
                      ca-certificates \
                      openssl
 
-RUN TEAMCITY_VERSION=10.0.2 && \
+RUN TEAMCITY_VERSION=10.0.3 && \
     \
     DOWNLOAD_URL=https://download.jetbrains.com/teamcity/TeamCity-$TEAMCITY_VERSION.tar.gz && \
     echo Downloading $DOWNLOAD_URL to $(pwd) && \
