@@ -41,7 +41,7 @@ RUN sed --in-place --expression 's_</Host>.*$_\
 # Check for new versions at: http://tomcat.apache.org/download-native.cgi
 RUN echo Compiling the APR based Apache Tomcat Native library && \
     \
-    TCNATIVE_VERSION=1.2.10 && \
+    TCNATIVE_VERSION=1.2.12 && \
     BUILD_DIR=/tmp/apr-build && \
     DOWNLOAD_URL=http://www-us.apache.org/dist/tomcat/tomcat-connectors/native/$TCNATIVE_VERSION/source/tomcat-native-$TCNATIVE_VERSION-src.tar.gz && \
     \
