@@ -1,5 +1,5 @@
 FROM openjdk:8-alpine
-MAINTAINER Alexander Groß <agross@therightstuff.de>
+LABEL maintainer "Alexander Groß <agross@therightstuff.de>"
 
 EXPOSE 8111
 
