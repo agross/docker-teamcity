@@ -17,7 +17,7 @@ RUN echo Installing packages && \
                      libressl \
                      tomcat-native
 
-RUN TEAMCITY_VERSION=10.0.5 && \
+RUN TEAMCITY_VERSION=2017.1 && \
     \
     DOWNLOAD_URL=https://download.jetbrains.com/teamcity/TeamCity-$TEAMCITY_VERSION.tar.gz && \
     echo Downloading $DOWNLOAD_URL to $(pwd) && \
