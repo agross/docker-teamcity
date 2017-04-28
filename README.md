@@ -180,9 +180,9 @@ This Dockerfile allows you to build images to deploy your own [TeamCity](http://
 
 8. Configure TeamCity.
 
-  Follow the steps of the installation [instructions for JetBrains TeamCity](https://confluence.jetbrains.com/display/TCD9/Installing+and+Configuring+the+TeamCity+Server#InstallingandConfiguringtheTeamCityServer-ConfiguringTeamCityServer) using paths inside the docker container located under
-
-    * `/teamcity/.BuildServer`.
+  Follow the steps of the installation
+  [instructions for JetBrains TeamCity](https://confluence.jetbrains.com/display/TCD9/Installing+and+Configuring+the+TeamCity+Server#InstallingandConfiguringtheTeamCityServer-ConfiguringTeamCityServer)
+  using paths inside the docker container located under `/teamcity/.BuildServer`.
 
 9. Update to a newer version.
 
