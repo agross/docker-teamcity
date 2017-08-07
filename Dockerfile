@@ -10,12 +10,13 @@ RUN echo Creating teamcity user and group with static ID of 3000 && \
     adduser -g "JetBrains TeamCity" -S -h "$(pwd)" -u 3000 -G teamcity teamcity
 
 RUN echo Installing packages && \
-    apk add --update coreutils \
-                     bash \
-                     wget \
-                     ca-certificates \
-                     libressl \
-                     tomcat-native
+    apk add --no-cache bash \
+                       coreutils \
+                       ca-certificates \
+                       git \
+                       libressl \
+                       tomcat-native \
+                       wget
 
 RUN TEAMCITY_VERSION=2017.1.3 && \
     \
