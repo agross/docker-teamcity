@@ -18,7 +18,7 @@ RUN echo Installing packages && \
                        tomcat-native \
                        wget
 
-RUN TEAMCITY_VERSION=2019.1 && \
+RUN TEAMCITY_VERSION=2019.1.1 && \
     \
     DOWNLOAD_URL=https://download.jetbrains.com/teamcity/TeamCity-$TEAMCITY_VERSION.tar.gz && \
     echo Downloading $DOWNLOAD_URL to $(pwd) && \
