@@ -5,6 +5,9 @@ EXPOSE 8111
 
 WORKDIR /teamcity
 
+HEALTHCHECK --start-period=2m \
+            CMD wget --server-response --output-document=/dev/null http://localhost:8111/login.html || exit 1
+
 RUN echo Creating teamcity user and group with static ID of 3000 && \
     addgroup -g 3000 -S teamcity && \
     adduser -g "JetBrains TeamCity" -S -h "$(pwd)" -u 3000 -G teamcity teamcity
