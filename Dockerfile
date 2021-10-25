@@ -12,7 +12,7 @@ WORKDIR /teamcity
 HEALTHCHECK --start-period=2m \
             CMD wget --server-response --output-document=/dev/null http://localhost:8111/login.html || exit 1
 
-ARG VERSION=2021.1.4
+ARG VERSION=2021.2
 ARG DOWNLOAD_URL=https://download.jetbrains.com/teamcity/TeamCity-$VERSION.tar.gz
 ARG SHA_DOWNLOAD_URL=https://download.jetbrains.com/teamcity/TeamCity-$VERSION.tar.gz.sha256
 
