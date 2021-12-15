@@ -1,4 +1,4 @@
-FROM openjdk:8-alpine
+FROM adoptopenjdk/openjdk11:alpine-jre
 LABEL maintainer "Alexander Groß <agross@therightstuff.de>"
 
 COPY ./docker-entrypoint.sh /
