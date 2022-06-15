@@ -26,6 +26,7 @@ RUN echo Creating teamcity user and group with static ID of 3000 && \
                        ca-certificates \
                        git \
                        libressl \
+                       openssh-client-default \
                        tomcat-native \
                        wget && \
     \
