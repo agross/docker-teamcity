@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM eclipse-temurin:11-jre-alpine
 LABEL maintainer "Alexander Groß <agross@therightstuff.de>"
 
 COPY ./docker-entrypoint.sh /
